@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Getting all Links</title>
+
+        <script>
+            function glinks(){
+                var a = [];
+                var li = document.links;
+                for(var j=0; j<li.length; j++)
+                {
+                   
+                    a.push(li[j].href);
+                }
+                return a;
+            }
+            console.log(glinks());
+        </script>
+    </head>
+</html>

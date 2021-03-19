@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Image display</title>
+
+        <style>
+            body {
+                margin: 40px;
+                padding: auto;
+                background-color: #f2f2f2;
+            }
+        </style>
+
+        <script>
+            var f = 0;
+            function getImage() {
+
+                var bar = ["b_off.png", "b_on.jpg"];
+                var iar = ["i1.jpg", "i2.jpg", "i3.jpg", "i4.jpg", "i5.jpg", "i6.jpg"];
+               
+                var n = Math.floor(Math.random() * (iar.length));
+                if(f == 1)
+                    f = 0;
+                else
+                    f = 1;
+                document.canvas.src = iar[n];
+                document.bulb.src = bar[f];
+            }
+        </script>
+    </head>
+    <body onload="getImage();">
+        <button onclick="getImage();">Click Me</button><br><br>
+        <img name="canvas" width="300px" height="300px"><br><br>
+        <img name="bulb" width="100px" height="100px">
+    </body>
+</html>

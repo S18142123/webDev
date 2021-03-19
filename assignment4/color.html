@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Random Color in Cirle</title>
+
+        <style>
+            body {
+                margin: 25px;
+                padding: auto;
+            }
+
+            div {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color:#f2f2f2;
+            }
+        </style>
+
+        <script>
+            function getColor() {
+                ele = document.getElementById("circle");
+                var ltr = '0123456789ABCDEF';
+                var color = '#';
+                for (var j = 0; j < 6; j++) {
+                    color += ltr[Math.floor(Math.random() * 16)];
+                }
+                ele.style.backgroundColor =  color;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="circle" name="circle">
+            
+        </div><br><br>
+        <button onclick="getColor();">Change</button>
+    </body>
+</html>

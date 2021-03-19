@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Swap</title>
+
+        <style>
+            body {
+                margin: 40px;
+                padding: auto;
+            }
+        </style>
+
+        <script>
+            function swap() {
+                var p1 = document.getElementById("px1");
+                var p2 = document.getElementById("px2");
+
+                var tmp = p1.textContent;
+                p1.textContent = p2.textContent;  
+                p2.textContent = tmp;
+            }
+        </script>
+    </head>
+
+    <body>
+        <p id="px1" style="color: blue"> This is  Paragraph 1</p>
+        <p id="px2" style="color: red"> This is Paragraph 2</p>
+        <button onclick="swap();">Swap</button>
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Random shape with random colors</title>
+
+        <script>
+            var fWidth = window.innerWidth;
+            var fHeight = window.innerHeight;
+
+            function getColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var j = 0; j < 6; j++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            function getShape(){
+                var e = document.getElementById('div2');
+                e.style.position = "absolute";
+                
+
+                function Squ(){    
+                    e.style.width = "100px";
+                    e.style.height = "100px";
+                    e.style.borderRadius = "0%";
+                    e.style.backgroundColor = getColor();
+                    e.style.left = Math.round(Math.random() * (fWidth - 100)) + "px";
+                    e.style.top = Math.round(Math.random() * (fHeight - 100)) + "px";
+                }
+
+                function Rect(){    
+                    e.style.width = "200px";
+                    e.style.height = "100px";
+                    e.style.borderRadius = "0%";
+                    e.style.backgroundColor = getColor();
+                    e.style.left = Math.round(Math.random() * (fWidth - 200)) + "px";
+                    e.style.top = Math.round(Math.random() * (fHeight - 100))+ "px";
+                }
+
+                function Cir(){    
+                    e.style.width = "100px";
+                    e.style.height = "100px";
+                    e.style.borderRadius = "50%";
+                    e.style.backgroundColor = getColor();
+                    e.style.left = Math.round(Math.random() * (fWidth - 100)) + "px";
+                    e.style.top = Math.round(Math.random() * (fHeight - 100)) + "px";
+                }
+
+                var func = [Squ, Cir, Rect];
+                var min = 700;
+                var max = 1200;
+                var time = Math.floor(Math.random() * (max - min + 1) + min);
+
+                setTimeout(function(){
+                    var i = Math.floor(Math.random()*func.length);
+                    func[i]();
+                }, time);
+
+            }
+        </script>
+    </head>
+    <body onload="getShape();">
+        <div id="div1" style="margin-left: 25%;"></div>
+        <div id="div2" onclick="getShape()"></div>
+    </body>
+</html>
